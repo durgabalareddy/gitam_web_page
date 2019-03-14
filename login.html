@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+  function validateForm(name)
+{
+  var x = document.forms[name]["fname"].value;
+  if (x == "") {
+    x = document.getElementById("loginformuid");
+    x.innerHTML="User Id can not be empty";
+    return false;
+  }
+  x = document.forms[name]["password"].value;
+  if (x == "") {
+   alert("PassWord can not be empty");
+  }
+}
+</script>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+</head>
+<body background="gandhi.jpg">
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" name="loginForm" onsubmit="return validateForm(name)">
+  	<span onclick="window.open('home.html','_self')" class="close" title="Close Modal" style="float: right;padding-right: 10px">&times;</span>
+    <div class="container">
+     <p align="left">UserId</p>
+	<input type="text" name="fname" onfocus="document.getElementById('loginformuid').innerHTML=''">
+  <p style="color:red;" id="loginformuid"></p>
+	<p align="left" >Password</p>
+	<input type="password" name="password" onfocus="document.getElementById('loginformpa').innerHTML=''">
+  <p style="color:red" id="loginformpa"></p>
+	<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<a href="registration.html">New User</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<a href="forgotpassword.html">Forgot Password</a><br><br>
+	<center><input type="submit" name="login" value="Login" style="width: 50%;  padding:10px 0px;  border-radius: 10px;   background-color: #FA8072"></center>
+    </div>
+  </form>
+</div>
+
+<script src="myjs.js"></script>
+
+</body>
+</html>
